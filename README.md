@@ -11,19 +11,20 @@
     docker build -t rnnbot . && docker run --rm -it -p 8080:8080 rnnbot
     ```
 4. go to http://localhost:8080
+** Note: make sure to use port 8080 on GCP **
 
 ### To deploy the app on GCP:
 1. navigate to the app root directory
 2. set the gcloud configuration and deploy the app:
-```
-gcloud config set project YOUR-PROJECT-ID
-gcloud app deploy
-```
+    ```
+    gcloud config set project YOUR-PROJECT-ID
+    gcloud app deploy
+    ```
 3. once it's deployed, you can open the webapp by running this in the terminal:
-```
-gcloud app browse
-```
+    ```
+    gcloud app browse
+    ```
+    or on https://[YOUR-PROJECT-NAME].appspot.com/trainingResults
 
 ### Other good resources:
-* FastAI Python [Example](https://fastai-v3.onrender.com/
-https://github.com/render-examples/fastai-v3/blob/master/app/view/index.html) (deployed on Render)
+* FastAI Python Live [Example](https://fastai-v3.onrender.com/) or [Github] (https://github.com/render-examples/fastai-v3/blob/master/app/view/index.html) (deployed on Render)
