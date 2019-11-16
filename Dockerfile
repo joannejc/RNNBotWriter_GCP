@@ -13,6 +13,6 @@ COPY app app/
 
 RUN python app/main.py
 
-EXPOSE 5000
+EXPOSE 8080
 
-CMD ["python", "app/main.py", "serve"]
+ENTRYPOINT ["python", "app/main.py", "serve"]

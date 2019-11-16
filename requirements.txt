@@ -9,5 +9,3 @@ python-multipart
 aiofiles
 aiohttp
 path.py
-google-endpoints
-google-endpoints-api-management

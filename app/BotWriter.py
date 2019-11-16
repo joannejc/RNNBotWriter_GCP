@@ -31,9 +31,10 @@ def cleanUserWords(words, chars):
 
 
 def botWriter(words, sentence_len = 200):
-    chars = getChars() 
-    weights = getWeights() 
-    model = RNN(len(chars), 100, 150, 2) # create a RNN model of the same chars_size, embedding_size, hidden_size, n_layers used in training
+    chars = getChars()
+    weights = getWeights()
+    # create a RNN model of the same chars_size, embedding_size, hidden_size, n_layers used in training
+    model = RNN(len(chars), 100, 150, 2)
     model.load_state_dict(weights)  # update model weights
     words = cleanUserWords(words,chars) # pre-process user's words
     return continue_words(net=model, chars=chars, initial_word=words, sentence_len=sentence_len)
