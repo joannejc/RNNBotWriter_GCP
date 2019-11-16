@@ -18,33 +18,42 @@
             background-color: #000000;
             color: white;
             font-size: 100%;
+            text-align: center;
         }
         h1 {
             margin: 20px;
             color: white;
-            text-align: center;
             font-size: 250%;
+            text-align: center;
         }
         a {
             margin: 20px;
-            font-size: 160%;
+            font-size: 60%;
+            text-align: center;
         }
         h2 {
             margin: 50px;
             font-size: 120%;
             padding: 0px;
+            text-align: left;
         }
         ul {
             margin: 50px;
             font-size: 100%;
+            text-align: left;
+        }
+        li {
+            text-align: left;
         }
     </style>
   </head>
   <body>
         <h1> RNN Bot Writer {{ booktitle }} </h1>
+        <h1>
         <a href="{{ url_for('index') }}">Home</a>
         <a href="{{ url_for('liveWriterForm') }}">Live Writer</a>
         <a href="{{ url_for('trainingResult') }}">Training Results</a>
+    </h1>
         <h2> {% block heading %} {% endblock %}</h2>
         <h2> {% block body %} {% endblock %}</h2>
   </body>
