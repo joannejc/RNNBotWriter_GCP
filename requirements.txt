@@ -1,0 +1,13 @@
+-f https://download.pytorch.org/whl/nightly/cpu/torch_nightly.html
+torch_nightly
+flask
+#fastai
+starlette
+uvicorn
+numpy
+python-multipart
+aiofiles
+aiohttp
+path.py
+google-endpoints
+google-endpoints-api-management

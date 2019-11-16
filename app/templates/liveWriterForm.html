@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<style>
+</style>
+{% block body %}
+    <h2> Type some words below, and the RNN bot will write a number of lines back to you!
+        <p></p>
+        <form action="{{ url_for('liveWriter') }}" method="post">
+            <input type="text" name="usersline" placeholder="type some words"></input>
+            <p></p>
+            
+            <p>Type the number of lines the bot should generate:</p>
+            <input type="number" name="usersnumlines" placeholder="type an integer"></input>
+            <p></p>
+            
+            <p>Type the length of characters the bot should generate for each line:</p>
+            <input type="number" name="usersnumchars" placeholder="type an integer"></input>
+            <br>
+            <br>
+            <button>Enter</button>
+        </form>       
+    </h2>
+{% endblock %}

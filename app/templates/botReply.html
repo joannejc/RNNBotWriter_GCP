@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+    You wrote: {{ usersline }}
+    <p></p>
+    <p></p>
+    Bot wrote: 
+    
+    {% for para in botline %}
+    <ul>
+        <li>{{ para }}</li>
+    </ul>
+    {% endfor %}
+{% endblock %}
