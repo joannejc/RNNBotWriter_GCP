@@ -29,4 +29,4 @@ See live action [here](https://app191114.appspot.com/).
     or on https://[YOUR-PROJECT-NAME].appspot.com
 
 ### Other good resources:
-* FastAI Python Live [Example](https://fastai-v3.onrender.com/)/ [Github](https://github.com/render-examples/fastai-v3/blob/master/app/view/index.html) (deployed on Render)
+* FastAI Python Live [Example](https://fastai-v3.onrender.com/)/ [Github](https://github.com/render-examples/fastai-v3/blob/master/app) (deployed on Render)
