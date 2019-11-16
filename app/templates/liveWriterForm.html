@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 <style>
+#txtbox {
+    text-align: left;
+    font-size: 14pt;
+    height: 100px;
+    width : 500px;
+}
 </style>
 {% block body %}
     <h2> Type some words below, and the RNN bot will write a number of lines back to you!
         <p></p>
         <form action="{{ url_for('liveWriter') }}" method="post">
-            <input type="text" name="usersline" placeholder="type some words"></input>
+            <textarea name="usersline" maxlength="850" autofocus="autofocus" 
+            placeholder="type some words" rows="4" style="height: 96px; width: 500px"></textarea>
             <p></p>
             
             <p>Type the number of lines the bot should generate:</p>
