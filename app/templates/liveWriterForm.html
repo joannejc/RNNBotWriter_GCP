@@ -1,23 +1,27 @@
 {% extends "base.html" %}
+<head>
+        <meta charset='utf-8'>
+        <script src='../static/client.js'></script>
+</head>
 <style>
 </style>
 {% block body %}
     <h2> Type some words below, and the RNN bot will write a number of lines back to you!
         <p></p>
         <form action="{{ url_for('liveWriter') }}" method="post">
-            <textarea name="usersline" maxlength="850" autofocus="autofocus" 
+            <textarea id="usersline" name="usersline" maxlength="850" autofocus="autofocus" 
             placeholder="type some words" rows="4" style="height: 96px; width: 500px"></textarea>
             <p></p>
             
             <p>Type the number of lines the bot should generate:</p>
-            <input type="number" name="usersnumlines" placeholder="type an integer"></input>
+            <input id= "lenlines" type="number" name="usersnumlines" placeholder="type an integer"></input>
             <p></p>
             
             <p>Type the length of characters the bot should generate for each line:</p>
-            <input type="number" name="usersnumchars" placeholder="type an integer"></input>
+            <input id="lenchars" type="number" name="usersnumchars" placeholder="type an integer"></input>
             <br>
             <br>
-            <button>Enter</button>
+            <button onclick='validateForm()'>Enter</button>
         </form>       
     </h2>
 {% endblock %}

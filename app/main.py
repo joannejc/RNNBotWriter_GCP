@@ -1,17 +1,20 @@
 from starlette.applications import Starlette
 from starlette.responses import HTMLResponse, JSONResponse
+from starlette.exceptions import HTTPException
 from starlette.routing import Route, Mount
 from starlette.templating import Jinja2Templates
-import sys
-import uvicorn
+from starlette.staticfiles import StaticFiles
 from path import Path
+import uvicorn
+import sys
 import os
 from BotWriter import botWriter
 
 path = Path(__file__).parent
 template_path = path/'templates'
 
-app = Starlette(debug=True)
+app = Starlette(debug=False)
+app.mount('/static', StaticFiles(directory='app/static'))
 templates = Jinja2Templates(directory=template_path)
 
 # index page
@@ -31,14 +34,17 @@ async def trainingResult(request):
 
 @app.route("/liveWriter", methods = ["POST"])
 async def liveWriter(request):
-    form = await request.form()
-    usersline = form.get("usersline")
-    num_lines = int(form.get("usersnumlines"))
-    num_chars = int(form.get("usersnumchars"))
-    botline = []
-    for i in range(num_lines):
-        botline.append(botWriter(usersline,num_chars))
-    
+    try:
+        form = await request.form()
+        usersline = form.get("usersline")
+        num_lines = int(form.get("usersnumlines"))
+        num_chars = int(form.get("usersnumchars"))
+        botline = []
+        for i in range(num_lines):
+            botline.append(botWriter(usersline,num_chars))
+    except:
+        return await liveWriterForm(request)
+
     return templates.TemplateResponse("botReply.html", 
     {"request": request,"usersline": usersline, "botline": botline})
 
