@@ -12,8 +12,8 @@ See live action [here](https://app191114.appspot.com/).
     docker build -t rnnbot . && docker run --rm -it -p 8080:8080 rnnbot
     ```
 4. go to http://localhost:8080
-<br/>
-Note: make sure to use [port 8080 on GCP Flex Runtime](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080)
+
+(Note: make sure to use [port 8080 on GCP Flex Runtime](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#listening_to_port_8080))
 
 ### To deploy the app on GCP:
 1. navigate to the app root directory
