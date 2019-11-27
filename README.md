@@ -1,5 +1,11 @@
 # RNN Bot Writer App (deployed on Google Cloud Platform)
 See live action [here](https://app191114.appspot.com/).
+
+### What does this repo do?
+This repo serves a pre-trained character-level [RNN](https://en.wikipedia.org/wiki/Recurrent_neural_network) model that synthesizes text given a user-prompt.
+
+The model is running on CPU can be deployed with a custom flex instance on Google Cloud Compute (GCP). Model serving and backend functions are accomplished with async python ASGI framework called [Starlette](https://www.starlette.io/) along with ASGI server [uvicorn](https://github.com/encode/uvicorn).
+
 ### To set up GCP:
 * [Github Demo](https://github.com/GoogleCloudPlatform/serverless-store-demo)
 * [Python3 GCP App Engine](https://cloud.google.com/appengine/docs/standard/python3/quickstart?fbclid=IwAR31gptmZIIA0xDj5dumgkQ-7mNiDfLq5wJel5i00enhqer8gyeKJy6kg_Q)
